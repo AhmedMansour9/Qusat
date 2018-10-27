@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    tools:context="com.example.ahmed.qusat.Fragments.Guest_Fragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@drawable/logo"
+            android:id="@+id/logoQussat"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/logoQussat"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:background="@drawable/bc_buttons"
+            android:text="@string/gust"
+            android:textColor="#044bff"
+            android:id="@+id/btn_gust"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/btn_gust"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:background="@drawable/bc_buttons"
+            android:text="@string/login"
+            android:textColor="#044bff"
+            android:id="@+id/btn_login"
+            android:textStyle="bold"
+
+            />
+    </RelativeLayout>
+   
+
+</FrameLayout>

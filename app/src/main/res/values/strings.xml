@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Qusat</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="gust">G U S T</string>
+    <string name="login">Login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="email">Email : </string>
+    <string name="password">Password :</string>
+    <string name="signin">Sign In</string>
+    <string name="create">Create an Account</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="ssn">National ID</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone">Phone</string>
+    <string name="birthday">Birthday</string>
+    <string name="address">Address</string>
+    <string name="home">Home</string>
+    <string name="signup">Sign Up</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

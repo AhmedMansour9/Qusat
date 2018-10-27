@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="gust">زائر </string>
+    <string name="login">تسجيل دخول</string>
+    <string name="email">البريد الاليكتروني  </string>
+    <string name="password">الرقم السري </string>
+    <string name="signin">تسجيل دخول</string>
+    <string name="create">انشاء حساب </string>
+    <string name="firstname">الاسم الاول</string>
+    <string name="lastname">الاسم الاخير</string>
+    <string name="ssn">الرقم القومي</string>
+    <string name="male">ذكر</string>
+    <string name="female">انثي</string>
+    <string name="phone">رقم الموبايل</string>
+    <string name="birthday">تاريخ الميلاد</string>
+    <string name="address">العنوان</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="signup">انشاء حساب</string>
+</resources>
