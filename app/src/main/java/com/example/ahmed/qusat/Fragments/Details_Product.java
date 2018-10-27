@@ -18,7 +18,7 @@ public class Details_Product extends Fragment {
     public Details_Product() {
         // Required empty public constructor
     }
-
+    String a,y,e,c,s;
    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
