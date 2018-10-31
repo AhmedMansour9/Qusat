@@ -20,7 +20,21 @@
     <string name="address">Address</string>
     <string name="home">Home</string>
     <string name="signup">Sign Up</string>
-
+    <string name="invalideemail">Invalid Email</string>
+    <string name="userfirstame">Please,write your first name</string>
+    <string name="userlastname">Please,write your last name</string>
+    <string name="userpassword">Please,write your Password</string>
+    <string name="usernationalid">Please,write your national id</string>
+    <string name="useradress">Please,write your adress</string>
+    <string name="fillinformation">Please full your information...</string>
+    <string name="invalidemail">Invalid Email</string>
+    <string name="waitingemail">Success Waiting E-Mail Confirm</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="checkinternetconnection">Check Your Internet Connection</string>
+    <string name="waitingemailconfirm">Waiting Email Confirm</string>
+    <string name="failedtologin">Failed to login</string>
+    <string name="uploadnationalid">Upload National Id</string>
+    <string name="uploadyournationalid">Upload Your National Id</string>
+
 </resources>

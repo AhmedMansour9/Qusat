@@ -17,4 +17,11 @@
     <string name="address">العنوان</string>
     <string name="home">الصفحة الرئيسية</string>
     <string name="signup">انشاء حساب</string>
+    <string name="invalidemail">البريد الالكتروني خطأ</string>
+    <string name="waitingemail">سوف تصلك رساله عبر البريد الالكترونى</string>
+    <string name="checkinternetconnection">افحص اتصال جهازك بالانترنت</string>
+    <string name="waitingemailconfirm">قم بالتاكيد على بريدك الالكترونى</string>
+    <string name="failedtologin">فشل ف الدخول</string>
+    <string name="uploadnationalid">حمل صوره البطاقه الشخصيه</string>
+    <string name="uploadyournationalid">ارفع صوره البطاقه الشخصيه</string>
 </resources>

@@ -9,6 +9,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/log_progressbar"/>
     <ImageView
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_140sdp"
@@ -24,7 +30,7 @@
           android:layout_marginTop="@dimen/_30sdp"
           android:layout_marginLeft="@dimen/_30sdp"
           android:layout_marginRight="@dimen/_30sdp"
-          android:text="@string/email"
+          android:hint="@string/email"
           android:id="@+id/E_Email"
           />
         <EditText
@@ -34,7 +40,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_30sdp"
-            android:text="@string/password"
+            android:hint="@string/password"
             android:id="@+id/E_Password"
             />
         <Button
@@ -52,6 +58,7 @@
             />
 
         <TextView
+            android:id="@+id/text_create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_signin"
