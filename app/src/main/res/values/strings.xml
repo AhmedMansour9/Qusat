@@ -36,5 +36,11 @@
     <string name="failedtologin">Failed to login</string>
     <string name="uploadnationalid">Upload National Id</string>
     <string name="uploadyournationalid">Upload Your National Id</string>
+    <string name="profileName">Name</string>
+    <string name="gender">Gender</string>
+    <string name="remaining">Remaining</string>
+    <string name="statuscolor">Status Color</string>
+    <string name="myorders">My Orders</string>
+    <string name="view">View</string>
 
 </resources>

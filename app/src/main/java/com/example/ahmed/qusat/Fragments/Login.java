@@ -1,6 +1,8 @@
 package com.example.ahmed.qusat.Fragments;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,6 +29,8 @@ Button userSigin;
 TextView createAccount;
 LoginPresenter loginPresenter;
 private ProgressBar progressBar;
+SharedPreferences.Editor shared;
+SharedPreferences.Editor sharedRole;
 
     public Login() {
         // Required empty public constructor
@@ -43,6 +47,9 @@ private ProgressBar progressBar;
         userSigin=view.findViewById( R.id.btn_signin );
         createAccount=view.findViewById( R.id.text_create_account );
         progressBar=view.findViewById( R.id.log_progressbar );
+        shared=this.getActivity().getSharedPreferences( "login", Context.MODE_PRIVATE ).edit();
+        sharedRole=this.getActivity().getSharedPreferences( "Role",Context.MODE_PRIVATE).edit();
+
         loginPresenter = new LoginPresenter(getContext(),this);
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +63,6 @@ private ProgressBar progressBar;
                 Login();
             }
         } );
-
         return view;
     }
    private void Login()
@@ -72,7 +78,9 @@ private ProgressBar progressBar;
        }
    }
     @Override
-    public void OpenMain(User user) {
+    public void OpenMain(String token) {
+        shared.putString( "logggin",token );
+        shared.apply();
         getFragmentManager().beginTransaction().replace(R.id.flContent,new Home()).commitAllowingStateLoss();
         progressBar.setVisibility( View.GONE );
     }

@@ -24,4 +24,10 @@
     <string name="failedtologin">فشل ف الدخول</string>
     <string name="uploadnationalid">حمل صوره البطاقه الشخصيه</string>
     <string name="uploadyournationalid">ارفع صوره البطاقه الشخصيه</string>
+    <string name="profileName">الاسم</string>
+    <string name="gender">الجنس</string>
+    <string name="remaining">المتبقي</string>
+    <string name="statuscolor">تقييمى</string>
+    <string name="myorders">طلباتى</string>
+    <string name="view">عرض</string>
 </resources>

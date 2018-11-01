@@ -2,7 +2,9 @@ package com.example.ahmed.qusat.Fragments;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -73,8 +75,6 @@ public class Register extends Fragment implements RegisterView {
    public static int ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE = 5469;
 
    // String image;
-
-
     public Register() {
         // Required empty public constructor
     }
@@ -99,8 +99,9 @@ public class Register extends Fragment implements RegisterView {
         progressBar=view.findViewById( R.id.reg_ProgressBar );
         selectImage=view.findViewById( R.id.reg_select_image );
         imageView=view.findViewById( R.id.reg_imageview );
-        checkPermission();
 
+
+        checkPermission();
         registerButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -178,7 +179,6 @@ public class Register extends Fragment implements RegisterView {
             }
 
     }
-
 
 
 
