@@ -1,14 +1,9 @@
 package com.example.ahmed.qusat.Fragments;
 
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -16,7 +11,6 @@ import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,29 +24,12 @@ import android.widget.Toast;
 import com.example.ahmed.qusat.CheckgbsAndNetwork;
 import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.model.User;
-import com.example.ahmed.qusat.presenter.UserPresenter;
+import com.example.ahmed.qusat.presenter.RegisterPresenter;
 import com.example.ahmed.qusat.view.RegisterView;
 import com.fourhcode.forhutils.FUtilsValidation;
 
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -60,7 +37,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class Register extends Fragment implements RegisterView {
-    UserPresenter userPresenter;
+    RegisterPresenter userPresenter;
     EditText firstName,lastName,userEmail,
             userPassword,userNationalId,userAdress,userPhone;
     CheckBox maleCheckBox,femaleCheckBox;
@@ -130,7 +107,7 @@ public class Register extends Fragment implements RegisterView {
                 maleCheckBox.setChecked(false);
             }
         });
-        userPresenter= new UserPresenter(getContext(), (RegisterView) this);
+        userPresenter= new RegisterPresenter(getContext(), (RegisterView) this);
     return view;
     }
 
