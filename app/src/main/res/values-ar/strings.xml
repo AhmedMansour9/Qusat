@@ -17,4 +17,18 @@
     <string name="address">العنوان</string>
     <string name="home">الصفحة الرئيسية</string>
     <string name="signup">انشاء حساب</string>
+    <string name="internet">رجاء الاتصال بالانترنت</string>
+    <string name="description">الوصف : </string>
+    <string name="paymentsystem">نظام الدفع</string>
+    <string name="price">السعر</string>
+    <string name="libraryname">المقدم</string>
+    <string name="month">المدة</string>
+    <string name="year">الزمن </string>
+    <string name="modelproduct">نوع المنتج</string>
+    <string name="categoryname">الفئة</string>
+    <string name="brandname">النوع</string>
+    <string name="vendorname">اسم البائع</string>
+    <string name="vendoraddress">عنوان البائع</string>
+    <string name="vendorphone">رقم البائع</string>
+
 </resources>

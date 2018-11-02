@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.ahmed.qusat.Activites.First_Activity;
+import com.example.ahmed.qusat.Activites.Second_Activity;
 
 public class Splash_Screen extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class Splash_Screen extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intMainActivity=new Intent(Splash_Screen.this,First_Activity.class);
+                    Intent intMainActivity=new Intent(Splash_Screen.this,Second_Activity.class);
                     startActivity(intMainActivity);
                     finish();
                 }

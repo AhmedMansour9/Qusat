@@ -4,12 +4,22 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
+    android:id="@+id/rela"
     tools:context="com.example.ahmed.qusat.Fragments.Home">
-
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/nestedScrollView"
+        android:clipToPadding="false"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_150sdp"
-        android:background="@drawable/bannerstatic">
+        android:layout_height="match_parent">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/_150sdp"
+               android:background="@drawable/bannerstatic"
+               />
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,20 +31,11 @@
             android:textStyle="bold"
             />
 
-    </RelativeLayout>
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:clipToPadding="false"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_marginTop="@dimen/_110sdp"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp"
         android:id="@+id/rela_one"
@@ -43,9 +44,9 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_Categroies"
             android:scrollbars="horizontal"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
@@ -60,13 +61,24 @@
         android:id="@+id/rela_two"
         android:layout_marginRight="@dimen/_10sdp"
         android:background="@drawable/bccategory">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/_10sdp"
-            android:id="@+id/Image_banner"
-            />
 
+        <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_Categories"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_banners"
+                android:scrollbars="horizontal"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
     </RelativeLayout>
 
           <android.support.v7.widget.RecyclerView
@@ -79,8 +91,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"/>
 
-
-      </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
+       </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

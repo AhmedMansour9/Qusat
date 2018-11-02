@@ -21,6 +21,21 @@
     <string name="home">Home</string>
     <string name="signup">Sign Up</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="internet">Turn on Internet</string>
+    <string name="description">Description : </string>
+    <string name="paymentsystem">PayMent System</string>
+    <string name="price">Price</string>
+    <string name="libraryname">Deposit</string>
+    <string name="month">Duration</string>
+    <string name="year">Period</string>
+    
+    <string name="modelproduct">Model Product</string>
+    <string name="categoryname">Category Name</string>
+    <string name="brandname">Brand Name</string>
+    <string name="vendorname">Vendor Name</string>
+    <string name="vendoraddress">Vendor Address</string>
+    <string name="vendorphone">Vendor Phone</string>
 </resources>
+
+
+
