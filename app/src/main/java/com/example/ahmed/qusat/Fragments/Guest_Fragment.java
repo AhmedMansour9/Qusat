@@ -33,8 +33,9 @@ public class Guest_Fragment extends Fragment {
         btn_Guest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Second_Activity.class));
-                getActivity().finish();
+                /*startActivity(new Intent(getActivity(), Second_Activity.class));
+                getActivity().finish();*/
+                getFragmentManager().beginTransaction().replace( R.id.flContent,new ProfileFragment() ).commitAllowingStateLoss();
             }
         });
        Login.setOnClickListener(new View.OnClickListener() {
