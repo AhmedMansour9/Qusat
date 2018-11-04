@@ -1,6 +1,8 @@
 package com.example.ahmed.qusat.Fragments;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.model.ProfileData;
 import com.example.ahmed.qusat.presenter.ProfilePresenter;
 import com.example.ahmed.qusat.view.ProfileView;
@@ -23,6 +24,7 @@ public class ProfileFragment extends Fragment implements ProfileView {
     TextView userName,userGender,userPhone,userRemaining;
     RelativeLayout statusColor;
     ProfilePresenter profilePresenter;
+    SharedPreferences prefs;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -40,20 +42,27 @@ public class ProfileFragment extends Fragment implements ProfileView {
         userRemaining=view.findViewById( R.id.profile_text_remaining );
         statusColor=view.findViewById( R.id.profile_status_colors );
         profilePresenter=new ProfilePresenter( getContext(),this );
-        profilePresenter.getProfileData( "IpUcxvZui3pwF1uZUkuBTy1tBKlZvywSW34CPn0DW1VtVffAk7fdsv1tFWjD","en" );
+        prefs=this.getActivity().getSharedPreferences( "login", Context.MODE_PRIVATE );
+        String userToken=prefs.getString( "logggin","zGnjjSOGeaYj5FqJDsF9Rhsljk5KFUOBJfnbqTTRpngb5qqEYUte234l56LI" );
+        profilePresenter.getProfileData(userToken,"en" );
         return view;
     }
     @Override
     public void showProfileData(ProfileData profileData) {
-        Toast.makeText( getContext(), "enter", Toast.LENGTH_LONG ).show();
         userName.setText( profileData.getName() );
         userGender.setText( profileData.getGander() );
         userPhone.setText( profileData.getPhone() );
         userRemaining.setText( profileData.getRemaining() );
-        statusColor.setBackgroundResource( R.drawable.button );
-        statusColor.setVisibility( View.VISIBLE );
-
-
+       // statusColor.setBackgroundResource( R.drawable.button );
+       if(profileData.getColor().equals( "white" )){
+//           statusColor.setBackgroundResource( R.drawable. );
+       }else if(profileData.getColor().equals( "black" )){
+//           statusColor.setBackgroundResource( R.drawable.black_button );
+       }else if(profileData.getColor().equals( "orange" )){
+//           statusColor.setBackgroundResource( R.drawable.button );
+       }
 
     }
+
+
 }

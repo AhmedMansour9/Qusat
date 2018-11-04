@@ -81,7 +81,7 @@ SharedPreferences.Editor sharedRole;
     public void OpenMain(String token) {
         shared.putString( "logggin",token );
         shared.apply();
-        getFragmentManager().beginTransaction().replace(R.id.flContent,new Home()).commitAllowingStateLoss();
+        getFragmentManager().beginTransaction().replace(R.id.flContent,new ProfileFragment()).commitAllowingStateLoss();
         progressBar.setVisibility( View.GONE );
     }
 
