@@ -8,44 +8,45 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
+            android:id="@+id/logoQussat"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_140sdp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_50sdp"
-            android:background="@drawable/logo"
-            android:id="@+id/logoQussat"
-            />
+            android:background="@drawable/logo" />
 
         <Button
+            android:id="@+id/btn_gust"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:layout_below="@+id/logoQussat"
-            android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginLeft="@dimen/_50sdp"
             android:layout_marginRight="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_40sdp"
             android:background="@drawable/bc_buttons"
             android:text="@string/gust"
+            android:textSize="@dimen/_16sdp"
             android:textColor="#044bff"
-            android:id="@+id/btn_gust"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:layout_below="@+id/btn_gust"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:textSize="@dimen/_16sdp"
             android:layout_marginLeft="@dimen/_50sdp"
             android:layout_marginRight="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             android:background="@drawable/bc_buttons"
             android:text="@string/login"
             android:textColor="#044bff"
-            android:id="@+id/btn_login"
             android:textStyle="bold"
 
             />
     </RelativeLayout>
-   
+
 
 </FrameLayout>

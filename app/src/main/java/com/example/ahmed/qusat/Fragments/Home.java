@@ -1,6 +1,7 @@
 package com.example.ahmed.qusat.Fragments;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.ahmed.qusat.Adapter.Banners_Adapter;
 import com.example.ahmed.qusat.Adapter.Categories_Adapter;
@@ -35,6 +37,8 @@ import com.example.ahmed.qusat.View.Products_View;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -55,6 +59,10 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
     RelativeLayout rela;
     Banners_Presenter banners_presenter;
     Products_Adapter products_adapter;
+    TextView profile;
+    SharedPreferences sha;
+    String logi;
+    TextView textProfile;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,19 +72,35 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         networikConntection=new NetworikConntection(getActivity());
         products_presenter=new Products_Presenter(getContext(),this);
         banners_presenter=new Banners_Presenter(getContext(),this);
+        sha=getActivity().getSharedPreferences("login",MODE_PRIVATE);
+        textProfile=view.findViewById(R.id.profile);
+        logi=sha.getString("logggin",null);
+        if(logi==null){
+            textProfile.setVisibility(View.GONE);
+        }
+
         init();
         Recyclview();
         SwipRefresh();
-
+        OpenProfile();
 
 
         return view;
     }
     public void init(){
         rela=view.findViewById(R.id.rela);
-
+        profile=view.findViewById(R.id.profile);
     }
+    public void OpenProfile(){
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                getFragmentManager().beginTransaction().replace(R.id.flContenttwo,new ProfileFragmen()).addToBackStack(null).commit();
+
+            }
+        });
+    }
     @Override
     public void Categories(List<Categories> list) {
 
@@ -109,6 +133,7 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
     public void SwipRefresh(){
         mSwipeRefreshLayout =  view.findViewById(R.id.swipe_Categories);
         mSwipeRefreshLayout.setOnRefreshListener(this);
+        mSwipeRefreshLayout.setEnabled(true);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
                 android.R.color.holo_green_dark,
                 android.R.color.holo_orange_dark,

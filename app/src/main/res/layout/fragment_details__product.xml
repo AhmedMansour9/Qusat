@@ -266,8 +266,9 @@
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/swipe_Leons"
             android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/_40sdp"
             android:layout_below="@+id/Linear"
-            android:layout_height="@dimen/_300sdp">
+            android:layout_height="@dimen/_100sdp">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_Leon"
             android:scrollbars="vertical"
@@ -279,6 +280,26 @@
 
 
     </android.support.v4.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentBottom="true"
+            android:background="#0356fc"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/byloan"
+                android:layout_centerInParent="true"
+               android:layout_centerVertical="true"
+                android:textSize="@dimen/_16sdp"
+                android:id="@+id/loan"
+                android:textStyle="bold"
+                android:layout_marginRight="@dimen/_50sdp"
+                />
+
+        </RelativeLayout>
 
     </RelativeLayout>
     </ScrollView>

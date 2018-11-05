@@ -20,7 +20,13 @@
                android:layout_height="@dimen/_150sdp"
                android:background="@drawable/bannerstatic"
                />
-
+      <ImageView
+          android:layout_width="@dimen/_100sdp"
+          android:layout_height="@dimen/_80sdp"
+          android:src="@drawable/logo"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="@dimen/_20sdp"
+          />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,7 +36,17 @@
             android:textSize="@dimen/_18sdp"
             android:textStyle="bold"
             />
-
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/profile"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:layout_marginRight="@dimen/_10sdp"
+               android:textSize="@dimen/_18sdp"
+               android:textStyle="bold"
+               android:id="@+id/profile"
+               android:layout_alignParentRight="true"
+               />
 
     <RelativeLayout
         android:layout_width="match_parent"

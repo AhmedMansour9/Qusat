@@ -2,7 +2,7 @@
     <string name="app_name">Qusat</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="gust">G U S T</string>
+    <string name="gust">G U E S T</string>
     <string name="login">Login</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -28,13 +28,58 @@
     <string name="libraryname">Deposit</string>
     <string name="month">Duration</string>
     <string name="year">Period</string>
-    
     <string name="modelproduct">Model Product</string>
     <string name="categoryname">Category Name</string>
     <string name="brandname">Brand Name</string>
     <string name="vendorname">Vendor Name</string>
     <string name="vendoraddress">Vendor Address</string>
     <string name="vendorphone">Vendor Phone</string>
+
+    <string name="invalideemail">Invalid Email</string>
+    <string name="userfirstame">Insert your first name</string>
+    <string name="userlastname">Insert your last name</string>
+    <string name="userpassword">Insert your Password</string>
+    <string name="usernationalid">Insert your national id</string>
+    <string name="useradress">Insert your adress</string>
+    <string name="fillinformation">Please full your information...</string>
+    <string name="invalidemail">Invalid Email</string>
+    <string name="waitingemail">Success Waiting E-Mail Confirm</string>
+    <string name="checkinternetconnection">Check Your Internet Connection</string>
+    <string name="waitingemailconfirm">Waiting Email Confirm</string>
+    <string name="failedtologin">Failed to login</string>
+    <string name="uploadnationalid">Upload National Id</string>
+    <string name="uploadyournationalid">Upload Your National Id</string>
+    <string name="profileName">Name</string>
+    <string name="gender">Gender</string>
+    <string name="remaining">Remaining</string>
+    <string name="statuscolor">Status Color</string>
+    <string name="myorders">My Orders</string>
+    <string name="view">View</string>
+    <string name="byloan">BUY BY LOAN</string>
+    <string name="loan">LOAN</string>
+    <string name="waitingconfirm">
+        Waiting Confirm From Vendor
+    </string>
+    <string name="profile">Profile</string>
+    <string name="pending">Pending</string>
+    <string name="approve">Approved</string>
+    <string name="libraryna">Vendor Name</string>
+    <string name="addresslibrary">Address Vendor</string>
+    <string name="phonelibrary">Phone Vendor</string>
+    <string name="deposit">Deposit</string>
+    <string name="loandetails">PayMent Method</string>
+    <string name="priceafter">Price After Deposit</string>
+    <string name="firstpayment">First Payment</string>
+    <string name="amount">Amount</string>
+    <string name="paymentamount">PayMent Amount</string>
+    <string name="method">Method</string>
+    <string name="duedate">Due Date</string>
+    <string name="collectiondate">Collection Date</string>
+   <string name="language">Language</string>
+    <string name="arabic">عربي</string>
+    <string name="english">English</string>
+    <string name="logout">Log Out</string>
+    <string name="loginfirs">Please Login First</string>
 </resources>
 
 

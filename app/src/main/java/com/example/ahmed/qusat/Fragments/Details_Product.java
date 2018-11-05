@@ -1,6 +1,7 @@
 package com.example.ahmed.qusat.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.ahmed.qusat.Activites.Spinner_Loan;
 import com.example.ahmed.qusat.Adapter.Banners_Adapter;
 import com.example.ahmed.qusat.Adapter.Leon_Adapter;
 import com.example.ahmed.qusat.Language;
@@ -40,7 +42,7 @@ public class Details_Product extends Fragment implements Leons_View,SwipeRefresh
     }
    View view;
     String Address,Id,ProductName,Price,Model,CategoryName,BrandName,PhoneVendor,image;
-    TextView T_Address,T_ProductName,T_Price,T_Model,T_CategoryName,T_BrandName,T_PhoneVendor;
+    TextView T_Address,T_ProductName,T_Price,T_Model,T_CategoryName,T_BrandName,T_PhoneVendor,loan;
     ImageView ImagProduct;
     Leons_Presenter Leons_presenter;
     SwipeRefreshLayout mSwipeRefreshLayout;
@@ -60,6 +62,7 @@ public class Details_Product extends Fragment implements Leons_View,SwipeRefresh
         init();
         getData();
        SwipRefresh();
+       OpenLoan();
 
 
         return view;
@@ -95,6 +98,21 @@ public class Details_Product extends Fragment implements Leons_View,SwipeRefresh
                         }
                     });
         }
+  }
+
+  public  void OpenLoan(){
+      loan.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent inty=new Intent(getActivity(), Spinner_Loan.class);
+              inty.putExtra("productid",Id);
+              inty.putExtra("name",ProductName);
+              inty.putExtra("price",Price);
+              inty.putExtra("image",image);
+              startActivity(inty);
+          }
+      });
+
   }
     public void SwipRefresh(){
         mSwipeRefreshLayout =  view.findViewById(R.id.swipe_Leons);
@@ -134,13 +152,14 @@ public class Details_Product extends Fragment implements Leons_View,SwipeRefresh
       T_Address=view.findViewById(R.id.T_VendorAddress);
       T_PhoneVendor=view.findViewById(R.id.T_VendorPhone);
       ImagProduct=view.findViewById(R.id.Image_product);
+      loan=view.findViewById(R.id.loan);
   }
 
     @Override
     public void Leons(List<Leons> list) {
         leon_adapter= new Leon_Adapter(list,getContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator());

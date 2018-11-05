@@ -24,7 +24,7 @@ public class Splash_Screen extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intMainActivity=new Intent(Splash_Screen.this,Second_Activity.class);
+                    Intent intMainActivity=new Intent(Splash_Screen.this,First_Activity.class);
                     startActivity(intMainActivity);
                     finish();
                 }

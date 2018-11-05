@@ -30,5 +30,42 @@
     <string name="vendorname">اسم البائع</string>
     <string name="vendoraddress">عنوان البائع</string>
     <string name="vendorphone">رقم البائع</string>
-
+    <string name="invalidemail">البريد الالكتروني خطأ</string>
+    <string name="waitingemail">سوف تصلك رساله عبر البريد الالكترونى</string>
+    <string name="checkinternetconnection">افحص اتصال جهازك بالانترنت</string>
+    <string name="waitingemailconfirm">قم بالتاكيد على بريدك الالكترونى</string>
+    <string name="failedtologin">فشل ف الدخول</string>
+    <string name="uploadnationalid">حمل صوره البطاقه الشخصيه</string>
+    <string name="uploadyournationalid">ارفع صوره البطاقه الشخصيه</string>
+    <string name="profileName">الاسم</string>
+    <string name="gender">الجنس</string>
+    <string name="remaining">المتبقي</string>
+    <string name="statuscolor">تقييمى</string>
+    <string name="myorders">طلباتى</string>
+    <string name="view">عرض</string>
+    <string name="byloan">اشتري بالتقسيط</string>
+    <string name="loan">قسط</string>
+    <string name="waitingconfirm">
+        أنتظر موافقة البائع
+    </string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="pending">قيد الانتظار</string>
+    <string name="approve">تم الموافقة </string>
+    <string name="libraryna">اسم المكتبة</string>
+    <string name="addresslibrary">عنوان المكتبة</string>
+    <string name="phonelibrary">رقم المكتبة</string>
+    <string name="deposit">المقدم</string>
+    <string name="loandetails">تفاصيل القسط</string>
+    <string name="priceafter">السعر بعد المقدم</string>
+    <string name="firstpayment">اول قسط </string>
+    <string name="duedate">تاريخ الاستحقاق</string>
+    <string name="collectiondate">يوم الدفع </string>
+    <string name="amount">كمية</string>
+    <string name="paymentamount">مطلوب دفعه</string>
+    <string name="method">طريقة</string>
+    <string name="language">اللغة</string>
+    <string name="arabic">عربي</string>
+    <string name="english">اللغة الانجليزية</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="loginfirs">رجاء تسجيل الدخول اولا</string>
 </resources>
