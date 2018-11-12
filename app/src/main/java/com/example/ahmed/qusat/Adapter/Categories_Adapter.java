@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Model.Categories;
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.View.Product_id;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -51,6 +51,10 @@ public class Categories_Adapter extends RecyclerView.Adapter<Categories_Adapter.
         this.filteredList=list;
         this.con=context;
     }
+    public Categories_Adapter(Context context){
+
+        this.con=context;
+    }
     public void setOnClicklistner(Product_id product_id){
         this.product_id=product_id;
     }
@@ -87,6 +91,7 @@ public class Categories_Adapter extends RecyclerView.Adapter<Categories_Adapter.
                         holder.ProgrossSpare.setVisibility(View.GONE);
                     }
                 });
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

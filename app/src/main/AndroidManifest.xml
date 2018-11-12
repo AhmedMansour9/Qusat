@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ahmed.qusat">
+    package="com.ahmedd.qusat">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/iconapp"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Splash_Screen">
+        <activity android:name="com.example.ahmed.qusat.Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activites.Second_Activity" />
-        <activity android:name=".Activites.First_Activity" />
+        <activity android:name="com.example.ahmed.qusat.Activites.Second_Activity" />
+        <activity android:name="com.example.ahmed.qusat.Activites.First_Activity" />
         <activity
-            android:name=".Activites.Spinner_Loan"
+            android:name="com.example.ahmed.qusat.Activites.Spinner_Loan"
             android:theme="@style/Theme.AppCompat.Dialog" />
     </application>
 

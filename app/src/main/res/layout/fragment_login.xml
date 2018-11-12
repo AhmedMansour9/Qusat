@@ -41,6 +41,7 @@
             android:layout_marginLeft="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_30sdp"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:id="@+id/E_Password"
             />
         <Button

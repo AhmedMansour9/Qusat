@@ -97,13 +97,24 @@
         </android.support.v4.widget.SwipeRefreshLayout>
     </RelativeLayout>
 
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/rela_two"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:layout_marginLeft="@dimen/_20sdp"
+               android:text="@string/featureproduct"
+               android:textColor="#000"
+               android:id="@+id/feature"
+               />
+
           <android.support.v7.widget.RecyclerView
               android:id="@+id/recycler_Products"
               android:scrollbars="vertical"
               android:layout_below="@+id/rela_two"
               android:layout_marginRight="@dimen/_10sdp"
               android:layout_marginLeft="@dimen/_10sdp"
-              android:layout_marginTop="@dimen/_10sdp"
+              android:layout_marginTop="@dimen/_30sdp"
               android:layout_width="match_parent"
               android:layout_height="match_parent"/>
 

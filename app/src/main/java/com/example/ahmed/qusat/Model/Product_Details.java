@@ -5,7 +5,15 @@ package com.example.ahmed.qusat.Model;
  */
 
 public class Product_Details {
-    private String productId,productName,productImage,price,modelProduct,CategoryName,brandName,addressVendor,phoneVendor;
+    private String productId,productName,productImage,price,modelProduct,CategoryName,brandName,addressVendor,phoneVendor,VendorName;
+
+    public String getVendorName() {
+        return VendorName;
+    }
+
+    public void setVendorName(String vendorName) {
+        VendorName = vendorName;
+    }
 
     public String getProductId() {
         return productId;

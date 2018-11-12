@@ -21,10 +21,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Model.User;
 import com.example.ahmed.qusat.NetworikConntection;
 import com.example.ahmed.qusat.Presenter.RegisterPresenter;
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.View.RegisterView;
 import com.fourhcode.forhutils.FUtilsValidation;
 

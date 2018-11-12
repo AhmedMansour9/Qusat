@@ -68,4 +68,13 @@
     <string name="english">اللغة الانجليزية</string>
     <string name="logout">تسجيل خروج</string>
     <string name="loginfirs">رجاء تسجيل الدخول اولا</string>
+    <string name="app_name">قسط</string>
+    <string name="invalideemail">البريد الالكتروني خطأ</string>
+    <string name="userfirstame">ادخل اسمك الاول</string>
+    <string name="userlastname">ادخل اسمك الاخير</string>
+    <string name="userpassword">ادخل الرقم السري</string>
+    <string name="usernationalid">ادخل الرقم القومي</string>
+    <string name="useradress">ادخل عنوانك</string>
+    <string name="fillinformation">من فضلك املئ بياناتك</string>
+    <string name="featureproduct">المنتجات المميزة</string>
 </resources>

@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Model.Product_Details;
 import com.example.ahmed.qusat.Model.Products;
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.View.DetailsProducts;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -49,6 +49,9 @@ public class Products_Adapter extends RecyclerView.Adapter<Products_Adapter.MyVi
 
     public Products_Adapter(List<Products> list, Context context){
         this.filteredList=list;
+        this.con=context;
+    }
+    public Products_Adapter(Context context){
         this.con=context;
     }
     public void setOnClicklistner(DetailsProducts detailsProducts){
@@ -97,7 +100,7 @@ public class Products_Adapter extends RecyclerView.Adapter<Products_Adapter.MyVi
                 details.setBrandName(filteredList.get(position).getBrandName());
                 details.setPhoneVendor(filteredList.get(position).getPhoneVendor());
                 details.setProductImage(filteredList.get(position).getImage());
-
+                details.setVendorName(filteredList.get(position).getNameVendor());
                 detailsProducts.ProductsDetails(details);
             }
         });

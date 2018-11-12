@@ -52,11 +52,36 @@ public class Products_Presenter {
                     getProducts.ErrorProducts();
                 }
             }
-
             @Override
             public void onFailure(Call<Products_Response> call, Throwable t) {
                 getProducts.ErrorProducts();
+            }
+        });
+    }
+    public void GetFeatureProduct(String lang) {
+        Map<String, String> queryMap = new HashMap<>();
+        queryMap.put("lan", lang);
+        queryMap.put("api_token", "100");
+        Apiinterface apiInterface = ApiClint.getClient().create(Apiinterface.class);
 
+        Call<Products_Response> call = apiInterface.ProductsFeature(queryMap);
+        call.enqueue(new Callback<Products_Response>() {
+            @Override
+            public void onResponse(Call<Products_Response> call, Response<Products_Response> response) {
+
+                if (response.isSuccessful()) {
+                    if (response.body().getData() != null) {
+                        getProducts.Products(response.body().getData());
+                    } else {
+                        getProducts.ErrorProducts();
+                    }
+                } else {
+                    getProducts.ErrorProducts();
+                }
+            }
+            @Override
+            public void onFailure(Call<Products_Response> call, Throwable t) {
+                getProducts.ErrorProducts();
             }
         });
     }

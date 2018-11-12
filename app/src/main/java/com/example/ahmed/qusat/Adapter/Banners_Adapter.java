@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Model.Banners;
 import com.example.ahmed.qusat.Model.Categories;
-import com.example.ahmed.qusat.R;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

@@ -15,10 +15,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Activites.Second_Activity;
 import com.example.ahmed.qusat.NetworikConntection;
 import com.example.ahmed.qusat.Presenter.LoginPresenter;
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.View.LoginView;
 
 /**

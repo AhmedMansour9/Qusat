@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Model.Categories;
 import com.example.ahmed.qusat.Model.Leons;
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.View.Product_id;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;

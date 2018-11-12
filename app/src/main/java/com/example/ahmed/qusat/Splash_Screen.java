@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Activites.First_Activity;
 import com.example.ahmed.qusat.Activites.Second_Activity;
 

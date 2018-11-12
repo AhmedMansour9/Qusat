@@ -26,20 +26,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Image_product"
-            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_10sdp"
             android:id="@+id/T_Name"
             android:textColor="#000"
             />
+
         <TextView
+            android:id="@+id/T_Price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/T_Name"
-            android:layout_marginLeft="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:id="@+id/T_Price"
-            android:textColor="#000"
-            />
+            android:layout_marginTop="18dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000" />
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/_3sdp"
@@ -55,24 +55,16 @@
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:id="@+id/descrption"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
             android:textColor="#000"
             android:text="@string/description"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/descrption"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_below="@+id/view"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:id="@+id/T_Descrption"
-            android:maxLines="1"
-            android:textColor="#000"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/T_Descrption"
+            android:layout_below="@+id/descrption"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:id="@+id/model"
@@ -82,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/T_Descrption"
+            android:layout_below="@+id/descrption"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_toRightOf="@+id/model"
@@ -194,6 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/vendorphone"
             android:layout_marginLeft="@dimen/_20sdp"
+            android:textStyle="bold"
             android:layout_marginTop="@dimen/_15sdp"
             android:id="@+id/payment"
             android:textColor="#000"
@@ -206,7 +199,7 @@
             android:layout_below="@+id/payment"
             android:orientation="horizontal"
             android:id="@+id/Linear"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:background="@drawable/bctable"
             android:layout_marginTop="@dimen/_10sdp">
 

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Activites.Spinner_Loan;
 import com.example.ahmed.qusat.Adapter.Banners_Adapter;
 import com.example.ahmed.qusat.Adapter.Leon_Adapter;
@@ -24,7 +25,6 @@ import com.example.ahmed.qusat.Model.Leons;
 import com.example.ahmed.qusat.NetworikConntection;
 import com.example.ahmed.qusat.Presenter.Banners_Presenter;
 import com.example.ahmed.qusat.Presenter.Leons_Presenter;
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.View.Leons_View;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -41,8 +41,8 @@ public class Details_Product extends Fragment implements Leons_View,SwipeRefresh
         // Required empty public constructor
     }
    View view;
-    String Address,Id,ProductName,Price,Model,CategoryName,BrandName,PhoneVendor,image;
-    TextView T_Address,T_ProductName,T_Price,T_Model,T_CategoryName,T_BrandName,T_PhoneVendor,loan;
+    String Address,Id,ProductName,Price,Model,CategoryName,BrandName,PhoneVendor,image,VendorName;
+    TextView T_Address,T_ProductName,T_Price,T_Model,T_CategoryName,T_BrandName,T_PhoneVendor,loan,T_VendorName;
     ImageView ImagProduct;
     Leons_Presenter Leons_presenter;
     SwipeRefreshLayout mSwipeRefreshLayout;
@@ -79,9 +79,11 @@ public class Details_Product extends Fragment implements Leons_View,SwipeRefresh
             BrandName=a.getString("brandname");
             PhoneVendor=a.getString("phonevendor");
             image=a.getString("image");
+            VendorName=a.getString("vendorname");
             T_Address.setText(Address);
             T_ProductName.setText(ProductName);
-            T_Price.setText(Price);
+            T_Price.setText(Price+" LE");
+            T_VendorName.setText(VendorName);
             T_Model.setText(Model);
             T_CategoryName.setText(CategoryName);
             T_BrandName.setText(BrandName);
@@ -153,6 +155,7 @@ public class Details_Product extends Fragment implements Leons_View,SwipeRefresh
       T_PhoneVendor=view.findViewById(R.id.T_VendorPhone);
       ImagProduct=view.findViewById(R.id.Image_product);
       loan=view.findViewById(R.id.loan);
+      T_VendorName=view.findViewById(R.id.T_VendorName);
   }
 
     @Override

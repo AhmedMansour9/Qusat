@@ -30,10 +30,14 @@ public interface Apiinterface {
     Call<Categories_Response> categories(@QueryMap Map<String, String> queryMab);
 
     @POST("banner")
-    Call<Banners_Response> banners(@QueryMap Map<String, String> queryMab);
+    Call<Banners_Response> banners(@Body Map<String, String> queryMab);
 
     @POST("product")
     Call<Products_Response> Products(@QueryMap Map<String, String> queryMab);
+
+    @POST("featureProduct")
+    Call<Products_Response> ProductsFeature(@QueryMap Map<String, String> queryMab);
+
 
     @POST("loan-product-details")
     Call<Leons_Response> Leons(@QueryMap Map<String, String> queryMab);

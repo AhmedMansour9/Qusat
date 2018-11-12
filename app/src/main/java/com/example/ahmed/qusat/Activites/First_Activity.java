@@ -6,8 +6,8 @@ import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Fragments.Guest_Fragment;
-import com.example.ahmed.qusat.R;
 
 import java.util.Locale;
 

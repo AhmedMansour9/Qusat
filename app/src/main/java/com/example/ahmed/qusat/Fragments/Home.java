@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ahmedd.qusat.R;
 import com.example.ahmed.qusat.Adapter.Banners_Adapter;
 import com.example.ahmed.qusat.Adapter.Categories_Adapter;
 import com.example.ahmed.qusat.Adapter.Products_Adapter;
@@ -28,14 +29,16 @@ import com.example.ahmed.qusat.NetworikConntection;
 import com.example.ahmed.qusat.Presenter.Banners_Presenter;
 import com.example.ahmed.qusat.Presenter.Categories_Presenter;
 import com.example.ahmed.qusat.Presenter.Products_Presenter;
-import com.example.ahmed.qusat.R;
 import com.example.ahmed.qusat.View.Banners_View;
 import com.example.ahmed.qusat.View.Categories_View;
 import com.example.ahmed.qusat.View.DetailsProducts;
 import com.example.ahmed.qusat.View.Product_id;
 import com.example.ahmed.qusat.View.Products_View;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -59,20 +62,25 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
     RelativeLayout rela;
     Banners_Presenter banners_presenter;
     Products_Adapter products_adapter;
-    TextView profile;
+    TextView profile,feature;
     SharedPreferences sha;
     String logi;
     TextView textProfile;
+    Boolean statues=false;
+    List<Banners> banne=new ArrayList<>();
+    Boolean end;
+    int position;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment3
         view= inflater.inflate(R.layout.fragment_home, container, false);
         categories=new Categories_Presenter(getContext(),this);
         networikConntection=new NetworikConntection(getActivity());
         products_presenter=new Products_Presenter(getContext(),this);
         banners_presenter=new Banners_Presenter(getContext(),this);
         sha=getActivity().getSharedPreferences("login",MODE_PRIVATE);
+        products_adapter = new Products_Adapter(getContext());
         textProfile=view.findViewById(R.id.profile);
         logi=sha.getString("logggin",null);
         if(logi==null){
@@ -90,6 +98,7 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
     public void init(){
         rela=view.findViewById(R.id.rela);
         profile=view.findViewById(R.id.profile);
+        feature=view.findViewById(R.id.feature);
     }
     public void OpenProfile(){
         profile.setOnClickListener(new View.OnClickListener() {
@@ -103,9 +112,7 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
     }
     @Override
     public void Categories(List<Categories> list) {
-
         categories_adapter = new Categories_Adapter(list,getContext());
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -113,8 +120,7 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         recyclerView.setLayoutManager(linearLayoutManager);
         categories_adapter.setOnClicklistner(this);
         recyclerView.setAdapter(categories_adapter);
-        mSwipeRefreshLayout.setRefreshing(true);
-        products_presenter.Getbanners("ar",list.get(0).getCategoryID());
+        mSwipeRefreshLayout.setRefreshing(false);
 
     }
 
@@ -142,15 +148,17 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         mSwipeRefreshLayout.post(new Runnable() {
             @Override
             public void run() {
-                if(networikConntection.isNetworkAvailable(getContext())) {
+                   if(networikConntection.isNetworkAvailable(getContext())) {
                     if (Language.isRTL()) {
                         mSwipeRefreshLayout.setRefreshing(true);
                         categories.GetCategories("ar");
                         banners_presenter.GetBanners("ar");
+                        products_presenter.GetFeatureProduct("ar");
                     } else {
                         mSwipeRefreshLayout.setRefreshing(true);
                         categories.GetCategories("en");
                         banners_presenter.GetBanners("en");
+                        products_presenter.GetFeatureProduct("en");
                     }
                 }else {
                     Snackbar.make(rela,getResources().getString(R.string.internet),1500).show();
@@ -172,6 +180,9 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         recycleBanner.setLayoutManager(linearLayoutManager);
         recycleBanner.setAdapter(banners_adapter);
         mSwipeRefreshLayout.setRefreshing(false);
+        banne=list;
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new AutoScrollTask(), 1000, 2000);
 
     }
 
@@ -188,8 +199,9 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
             recycleProducts.setLayoutManager(gridLayoutManager);
             recycleProducts.setAdapter(products_adapter);
             mSwipeRefreshLayout.setRefreshing(false);
-
-
+            if(statues) {
+                feature.setText(list.get(0).getCategoryName());
+            }
     }
 
     @Override
@@ -201,7 +213,6 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
 
     @Override
     public void onRefresh() {
-
     if(networikConntection.isNetworkAvailable(getContext())) {
         if (Language.isRTL()) {
             mSwipeRefreshLayout.setRefreshing(true);
@@ -220,6 +231,7 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
     @Override
     public void id(String id) {
         if(networikConntection.isNetworkAvailable(getContext())) {
+            statues=true;
             if(!Products_Adapter.filteredList.isEmpty()){
                 Products_Adapter.filteredList.clear();
                 products_adapter.notifyDataSetChanged();
@@ -251,12 +263,28 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         args.putString("categoryname",list.getCategoryName());
         args.putString("brandname",list.getBrandName());
         args.putString("phonevendor",list.getPhoneVendor());
+        args.putString("vendorname",list.getVendorName());
         details_product.setArguments(args);
         getFragmentManager().beginTransaction()
                 .replace(R.id.flContenttwo, details_product )
                 .addToBackStack(null)
                 .commit();
+    }
 
-
+    private class AutoScrollTask extends TimerTask {
+        @Override
+        public void run() {
+            if(position == banne.size() -1){
+                end = true;
+            } else if (position == 0) {
+                end = false;
+            }
+            if(!end){
+                position++;
+            } else {
+                position--;
+            }
+            recycleBanner.smoothScrollToPosition(position);
+        }
     }
 }
