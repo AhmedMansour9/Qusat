@@ -5,120 +5,121 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
     android:id="@+id/rela"
+    android:clickable="true"
+    android:focusable="true"
     tools:context="com.example.ahmed.qusat.Fragments.Home">
     <ScrollView
         android:id="@+id/nestedScrollView"
         android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
 
-           <ImageView
-               android:layout_width="match_parent"
-               android:layout_height="@dimen/_150sdp"
-               android:background="@drawable/bannerstatic"
-               />
-      <ImageView
-          android:layout_width="@dimen/_100sdp"
-          android:layout_height="@dimen/_80sdp"
-          android:src="@drawable/logo"
-          android:layout_centerHorizontal="true"
-          android:layout_marginTop="@dimen/_20sdp"
-          />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/home"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:textSize="@dimen/_18sdp"
-            android:textStyle="bold"
-            />
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/profile"
-               android:layout_marginTop="@dimen/_10sdp"
-               android:layout_marginRight="@dimen/_10sdp"
-               android:textSize="@dimen/_18sdp"
-               android:textStyle="bold"
-               android:id="@+id/profile"
-               android:layout_alignParentRight="true"
-               />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_marginTop="@dimen/_110sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:id="@+id/rela_one"
-        android:background="@drawable/bccategory">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_Categroies"
-            android:scrollbars="horizontal"
-            android:layout_marginRight="@dimen/_2sdp"
-            android:layout_marginLeft="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_2sdp"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content">
 
-    </RelativeLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/bannerstatic" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_120sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_below="@+id/rela_one"
-        android:id="@+id/rela_two"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:background="@drawable/bccategory">
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/logo" />
 
-        <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_Categories"
-        android:layout_width="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/home"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/profile"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rela_one"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_110sdp"
+                android:background="@drawable/bccategory">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_Categroies"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:scrollbars="horizontal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rela_two"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_below="@+id/rela_one"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bccategory">
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_Categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_banners"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_2sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:scrollbars="horizontal" />
+
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/feature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rela_two"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/featureproduct"
+                android:textColor="#000" />
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_banners"
-                android:scrollbars="horizontal"
-                android:layout_marginRight="@dimen/_2sdp"
-                android:layout_marginLeft="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_2sdp"
+                android:id="@+id/recycler_Products"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rela_two"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:scrollbars="vertical" />
 
-
-        </android.support.v4.widget.SwipeRefreshLayout>
-    </RelativeLayout>
-
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_below="@+id/rela_two"
-               android:layout_marginTop="@dimen/_10sdp"
-               android:layout_marginLeft="@dimen/_20sdp"
-               android:text="@string/featureproduct"
-               android:textColor="#000"
-               android:id="@+id/feature"
-               />
-
-          <android.support.v7.widget.RecyclerView
-              android:id="@+id/recycler_Products"
-              android:scrollbars="vertical"
-              android:layout_below="@+id/rela_two"
-              android:layout_marginRight="@dimen/_10sdp"
-              android:layout_marginLeft="@dimen/_10sdp"
-              android:layout_marginTop="@dimen/_30sdp"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"/>
-
-       </RelativeLayout>
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>

@@ -45,7 +45,8 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Home extends Fragment implements DetailsProducts,Categories_View ,SwipeRefreshLayout.OnRefreshListener,Banners_View,Products_View,Product_id{
+public class Home extends Fragment implements DetailsProducts,Categories_View
+        ,SwipeRefreshLayout.OnRefreshListener,Banners_View,Products_View,Product_id{
 
 
     public Home() {
@@ -75,6 +76,8 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment3
         view= inflater.inflate(R.layout.fragment_home, container, false);
+        setRetainInstance(true);
+        String greeting = (savedInstanceState != null) ? savedInstanceState.getString("greeting") : "null";
         categories=new Categories_Presenter(getContext(),this);
         networikConntection=new NetworikConntection(getActivity());
         products_presenter=new Products_Presenter(getContext(),this);
@@ -104,11 +107,21 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                getFragmentManager().beginTransaction().replace(R.id.flContenttwo,new ProfileFragmen()).addToBackStack(null).commit();
+                getFragmentManager().beginTransaction()
+                        .add(R.id.flContenttwo,new ProfileFragmen()).addToBackStack(null).commit();
 
             }
         });
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("greeting", "Hello");
+    }
+    @Override
+    public void onViewStateRestored(Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        String greeting = (savedInstanceState != null) ? savedInstanceState.getString("greeting") : "null";
     }
     @Override
     public void Categories(List<Categories> list) {
@@ -209,8 +222,6 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         mSwipeRefreshLayout.setRefreshing(false);
     }
 
-
-
     @Override
     public void onRefresh() {
     if(networikConntection.isNetworkAvailable(getContext())) {
@@ -266,7 +277,7 @@ public class Home extends Fragment implements DetailsProducts,Categories_View ,S
         args.putString("vendorname",list.getVendorName());
         details_product.setArguments(args);
         getFragmentManager().beginTransaction()
-                .replace(R.id.flContenttwo, details_product )
+                .add(R.id.flContenttwo, details_product )
                 .addToBackStack(null)
                 .commit();
     }

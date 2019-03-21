@@ -75,6 +75,7 @@ public class Products_Adapter extends RecyclerView.Adapter<Products_Adapter.MyVi
         holder.ProgrossSpare.setVisibility(View.VISIBLE);
         Picasso.with(con)
                 .load("http://qussat.com/"+u)
+                .resize(500,500)
                 .into(holder.img_Spare, new Callback() {
                     @Override
                     public void onSuccess() {

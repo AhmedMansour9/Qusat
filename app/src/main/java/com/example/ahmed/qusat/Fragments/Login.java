@@ -93,8 +93,8 @@ public class Login extends Fragment implements LoginView {
     }
 
     @Override
-    public void WaitingEmail() {
-        Toast.makeText( getContext(), R.string.waitingemailconfirm, Toast.LENGTH_SHORT ).show();
+    public void WaitingEmail(String y) {
+        Toast.makeText( getContext(), y, Toast.LENGTH_SHORT ).show();
         progressBar.setVisibility( View.GONE );
     }
 

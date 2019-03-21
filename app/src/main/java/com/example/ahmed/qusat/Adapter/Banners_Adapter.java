@@ -65,6 +65,7 @@ public class Banners_Adapter  extends RecyclerView.Adapter<Banners_Adapter.MyVie
         holder.Progrossbar.setVisibility(View.VISIBLE);
         Picasso.with(con)
                 .load("http://qussat.com/"+u)
+                .resize(500,500)
                 .into(holder.img_banner, new Callback() {
                     @Override
                     public void onSuccess() {

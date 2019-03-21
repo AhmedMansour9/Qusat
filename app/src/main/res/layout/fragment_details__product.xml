@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:id="@+id/rela"
+    android:clickable="true"
+    android:focusable="true"
+
     tools:context="com.example.ahmed.qusat.Fragments.Details_Product">
 
     <ScrollView

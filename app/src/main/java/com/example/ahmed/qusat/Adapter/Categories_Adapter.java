@@ -80,6 +80,7 @@ public class Categories_Adapter extends RecyclerView.Adapter<Categories_Adapter.
         holder.ProgrossSpare.setVisibility(View.VISIBLE);
         Picasso.with(con)
                 .load("http://qussat.com/"+u)
+                .resize(500,500)
                 .into(holder.img_Category, new Callback() {
                     @Override
                     public void onSuccess() {
